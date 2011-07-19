@@ -1,0 +1,8 @@
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script>
+  chrome.bookmarks.onCreated.addListener( function(id, bookmark) {
+    if(bookmark.url){
+        $.post("http://localhost:1413/add", { url: bookmark.url , title: bookmark.title } );
+    }
+  });
+</script>
