@@ -3,7 +3,6 @@
 require 'sinatra'
 require 'json'
 require  File.dirname(__FILE__) + '/index.rb'
-require 'ruby-debug'
 
 @@index = BookmarksIndex.new
 
