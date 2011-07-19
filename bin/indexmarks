@@ -16,7 +16,7 @@ end
 
 before do
   response.headers["Access-Control-Allow-Origin"] = "*"
-  response.headers["Access-Control-Allow-Methods"] = "POST,GET"
+  response.headers["Access-Control-Allow-Methods"] = "POST,GET,DELETE"
 end
 
 get "/search" do
@@ -27,3 +27,8 @@ end
 post "/add" do
 	@@index << params
 end
+
+delete "/remove" do
+  @@index.remove(params[:id])
+end
+

@@ -17,23 +17,30 @@ class BookmarksIndex
       response = Net::HTTP.get_response(URI.parse(new_item[:url]))
 
       if response.code == "200"
-        bookmark = {:title => new_item[:title], :url => new_item[:url]}
+        bookmark = {:title => new_item[:title], :url => new_item[:url], :id => new_item[:id]}
         bookmark[:content] = Sanitize.clean(utf8_encode(response.body)).gsub(/\s+/," ")
         @mutex.synchronize { @index << bookmark }
       end
     end
   end
 
+  def remove (id)
+    Thread.new (id) do |delete_id|
+      @index.search_each("id:#{delete_id}") do |fid, score|
+        @mutex.synchronize { @index.delete(fid) }
+      end
+    end
+  end
+
   def search (query, limit = 10 )
     results = []
-    @index.search_each("*:#{query}", { :num_docs => limit }) do |id, score|
+    @index.search_each("*:#{query}*", { :num_docs => limit }) do |id, score|
       results << {:title => utf8_encode(@index[id][:title]), 
         :url => utf8_encode(@index[id][:url]), 
-        :content => utf8_encode(@index[id][:content][0...1000]) } 
+        :content => utf8_encode(@index[id][:content][0...500]) } 
     end
     results
   end
-
 
   private 
   def utf8_encode (text)

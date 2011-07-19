@@ -2,7 +2,15 @@
 <script>
   chrome.bookmarks.onCreated.addListener( function(id, bookmark) {
     if(bookmark.url){
-        $.post("http://localhost:1413/add", { url: bookmark.url , title: bookmark.title } );
+      $.post("http://localhost:1413/add", { url: bookmark.url , title: bookmark.title, id: bookmark.id } );
     }
+  });
+
+  chrome.bookmarks.onRemoved.addListener( function(id, e) {
+    $.ajax({
+      url: "http://localhost:1413/remove", 
+      data: { id: id },
+      type: "DELETE"
+    });
   });
 </script>
