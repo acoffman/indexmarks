@@ -2,10 +2,10 @@ function getSuggestions(query){
   $(".results").empty();
   if(query != ''){
     request = $.getJSON( 'http://localhost:1413/search', { q : query }, function(data) {
-      $( "#search_result" ).tmpl( data )
+        $( "#search_result" ).tmpl( data )
         .appendTo( ".results" );
         inProgress = false;
-    });
+        });
   }
 }
 

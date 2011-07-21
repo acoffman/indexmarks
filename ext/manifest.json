@@ -1,13 +1,13 @@
 {
   "name": "IndexMarks",
-  "version": "0.1",
-  "description": "Full text indexing of bookmarks",
-  "icons": { "128": "icon.png"},
-  "browser_action": {
-    "default_title": "Indexmarks",
-    "default_popup": "search/search.html",
-    "default_icon": "icon.png"
-   },
-   "background_page": "background.html",
-   "permissions": [ "bookmarks" ]
+    "version": "0.1",
+    "description": "Full text indexing of bookmarks",
+    "icons": { "128": "icon.png"},
+    "browser_action": {
+      "default_title": "Indexmarks",
+      "default_popup": "search/search.html",
+      "default_icon": "icon.png"
+    },
+    "background_page": "background.html",
+    "permissions": [ "bookmarks" ]
 }

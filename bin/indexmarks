@@ -7,10 +7,10 @@ require  File.dirname(__FILE__) + '/index.rb'
 @@index = BookmarksIndex.new
 
 configure do
-	set :environment, :production
-	set :server, %w{ webrick }
-	set :port, 1413
-	set :run, true
+  set :environment, :production
+  set :server, %w{ webrick }
+  set :port, 1413
+  set :run, true
 end
 
 before do
@@ -19,12 +19,12 @@ before do
 end
 
 get "/search" do
-	content_type :json
-	@@index.search(params[:q]).to_json 
+  content_type :json
+  @@index.search(params[:q]).to_json 
 end
 
 post "/add" do
-	@@index << params
+  @@index << params
 end
 
 delete "/remove" do
