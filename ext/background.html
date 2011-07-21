@@ -1,5 +1,23 @@
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script>
+  function traverseTree (bookmarkNodes) {
+    for (i = 0; i < bookmarkNodes.length; i++) {
+      var node = bookmarkNodes[i]
+      if(node.children){
+        traverseTree(node.children);
+      }
+      if(node.url){
+        $.post("http://localhost:1413/add", { url: node.url , title: node.title, id: node.id } );
+      }
+    }
+  }
+
+  var hasRun = (localStorage['indexHasRun'] == 'true');
+  if (!hasRun) {
+    chrome.bookmarks.getTree(traverseTree);
+    localStorage['indexHasRun'] = 'true';
+  }
+
   chrome.bookmarks.onCreated.addListener( function(id, bookmark) {
     if(bookmark.url){
       $.post("http://localhost:1413/add", { url: bookmark.url , title: bookmark.title, id: bookmark.id } );

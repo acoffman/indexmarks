@@ -23,6 +23,8 @@ If you don't want to install IndexMarks for everyday use or would like to be abl
 
 5. Continue bookmarking things like normal - but when you want to search, click the newly added IndexMarks icon in Chrome!
 
+6. Note that the first time you start IndexMarks, it will spider your bookmark tree and build the initial index. This process can take several minutes depending on how many things you have bookmarked. Be patient, this will only happen once!
+
 
 Installation - For Everyday Use
 -----
@@ -42,7 +44,7 @@ Preview
 
 Planned Features
 ------------
-Everything works as is - however I would like to highlight the the search terms in the results and provide more intelligent text snippets rather than just the first few hundred characters. Extensions for other browsers would also increase its usefulness.
+Everything works as is - however I would like to highlight the the search terms in the results and provide more intelligent text snippets rather than just the first few hundred characters. Extensions for other browsers would also increase its usefulness. Additionally, weighting search results based on title or h1 tags would probably improve the relevancy of the results.
 
 Author
 -------
