@@ -1,4 +1,4 @@
-![preview](https://github.com/thecoffman/indexmarks/raw/master/ext/icon.png)
+![icon](https://github.com/thecoffman/indexmarks/raw/master/ext/icon.png)
 #IndexMarks
 ###Because a bookmark titled "Joe's Blog" just isn't that useful.
 
@@ -38,6 +38,7 @@ Credits
 
 Preview
 ------------
+![preview](http://cl.ly/3q1A1M3m0t3H2t1D0C30)
 
 Planned Features
 ------------
