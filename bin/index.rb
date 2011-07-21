@@ -14,8 +14,10 @@ class BookmarksIndex
 
   def << (item)
     Thread.new (item) do |new_item|
-      response = Net::HTTP.get_response(URI.parse(new_item[:url]))
-
+      uri = URI.parse(new_item[:url]) 
+      opts = uri.scheme == "https" ? {:use_ssl => true} : {} 
+      response = Net::HTTP.start(uri.host, uri.port, opt = opts) { |http| http.get uri.request_uri }
+       
       if response.code == "200"
         bookmark = {:title => new_item[:title], :url => new_item[:url], :id => new_item[:id]}
         bookmark[:content] = Sanitize.clean(utf8_encode(response.body)).gsub(/\s+/," ")
