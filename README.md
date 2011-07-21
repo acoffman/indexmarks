@@ -38,7 +38,7 @@ Credits
 
 Preview
 ------------
-![preview](http://cl.ly/3q1A1M3m0t3H2t1D0C30)
+![preview](http://f.cl.ly/items/1f2E3T3A2x0R1V2D083Y/Screen%20shot%202011-07-21%20at%209.22.19%20AM.png)
 
 Planned Features
 ------------
