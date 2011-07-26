@@ -15,11 +15,11 @@ If you don't want to install IndexMarks for everyday use or would like to be abl
 
 1. Pull this repo
 
-2. Navigate to the `bin` directory and `./indexmarks`
+2. Make sure you have the dependencies installed. You'll need the following gems: `sinatra, json, sanitize, sdsykes-ferret`
 
-3. Open Chrome. Go to Extensions -> Developer -> Load Unpacked Extension and select the `ext` directory from this repo
+3. Navigate to the `bin` directory and `./indexmarks`
 
-4. Make sure you have the dependencies installed. You'll need the following gems: `sinatra, json, sanitize, sdsykes-ferret`
+4. Open Chrome. Go to Extensions -> Developer -> Load Unpacked Extension and select the `ext` directory from this repo
 
 5. Continue bookmarking things like normal - but when you want to search, click the newly added IndexMarks icon in Chrome!
 
