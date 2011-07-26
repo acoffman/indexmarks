@@ -15,15 +15,15 @@ If you don't want to install IndexMarks for everyday use or would like to be abl
 
 1. Pull this repo
 
-2. Open Chrome. Go to Extensions -> Developer -> Load Unpacked Extension and select the `ext` directory from this repo
+2. Navigate to the `bin` directory and `./indexmarks`
 
-3. Make sure you have the dependencies installed. You'll need the following gems: `sinatra, json, sanitize, sdsykes-ferret`
+3. Open Chrome. Go to Extensions -> Developer -> Load Unpacked Extension and select the `ext` directory from this repo
 
-4. Navigate to the `bin` directory and `./indexmarks`
+4. Make sure you have the dependencies installed. You'll need the following gems: `sinatra, json, sanitize, sdsykes-ferret`
 
 5. Continue bookmarking things like normal - but when you want to search, click the newly added IndexMarks icon in Chrome!
 
-6. Note that the first time you start IndexMarks, it will spider your bookmark tree and build the initial index. This process can take several minutes depending on how many things you have bookmarked. Be patient, this will only happen once!
+6. Note that the first time you start IndexMarks, it will spider your bookmark tree and build the initial index. This process can take several minutes depending on how many things you have bookmarked. Be patient, this will only happen once! The server must be running the first time you start the extension or the indexing will not take place.
 
 
 Installation - For Everyday Use
