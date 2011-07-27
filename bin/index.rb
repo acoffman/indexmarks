@@ -36,10 +36,13 @@ class BookmarksIndex
 
   def search (query, limit = 10 )
     results = []
-    @index.search_each("*:#{query}*", { :num_docs => limit }) do |id, score|
-      results << {:title => utf8_encode(@index[id][:title]), 
+    query = "*:#{query}*"
+    @index.search_each(query , { :num_docs => limit }) do |id, score|
+      results << {
+        :title => utf8_encode(@index[id][:title]), 
         :url => utf8_encode(@index[id][:url]), 
-        :content => utf8_encode(@index[id][:content][0...500]) } 
+        :content => utf8_encode(@index.highlight(query, id, :field => :content , :pre_tag => "", :post_tag => "").join)
+     } 
     end
     results
   end
